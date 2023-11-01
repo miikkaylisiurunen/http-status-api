@@ -23,6 +23,9 @@ export async function sendResponse(body: ApiResponse, delay: string): Promise<Re
     headers: {
       'content-type': 'application/json',
       'cache-control': isDelay ? 'no-store' : 'max-age=0, s-maxage=2678400',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
     },
   });
 }
